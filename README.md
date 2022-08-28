@@ -1,14 +1,14 @@
 # URPSeaCloudFog
 
-This is an sea&cloud&skyfog integrated project for height based & atomspheric fog rendering for URP (10.x+).
+This is an sea&cloud&sky integrated project for height based & atomspheric fog rendering for URP (10.x+).
 
 ![](./Image/URPSeaCloudFog.png)
-<p align="center">Atomspheric Fog scene</p>
+<p align="center">Atomspheric Fog (Sky Fog)</p>
 
 ![](./Image/URPSeaCloudFog1.png)
 ![](./Image/URPSeaCloudFog2.png)
 
-<p align="center">Height based & Atomspheric Fog</p>
+<p align="center">Height based & Sky Fog</p>
 
 ## Use
 
