@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7881920363055502255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b7a491b01d1c249ae92f93b2ffcbe4, type: 3}
+  m_Name: NewSunShaftsRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  sunShaftsPS: {fileID: 4800000, guid: 6061735351087c24ea4ab13ba7f0a86a, type: 3}
+--- !u!114 &-1342104630219831097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3c6afb38c9a9f4895d5cd9d07aabc8, type: 3}
+  m_Name: NewTransparentRenderPassFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
+  m_Name: UniversalRenderPipelineAsset_Renderer
+  m_EditorClassIdentifier: 
+  m_RendererFeatures: []
+  m_RendererFeatureMap: 
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
+  shaders:
+    blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    copyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
+    screenSpaceShadowPS: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
+      type: 3}
+    samplingPS: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
+    tileDepthInfoPS: {fileID: 0}
+    tileDeferredPS: {fileID: 0}
+    stencilDeferredPS: {fileID: 4800000, guid: e9155b26e1bc55942a41e518703fe304, type: 3}
+    fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+    materialErrorPS: {fileID: 4800000, guid: 5fd9a8feb75a4b5894c241777f519d4e, type: 3}
+  m_OpaqueLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_TransparentLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_DefaultStencilState:
+    overrideStencilState: 0
+    stencilReference: 0
+    stencilCompareFunction: 8
+    passOperation: 2
+    failOperation: 0
+    zFailOperation: 0
+  m_ShadowTransparentReceive: 1
+  m_RenderingMode: 0
+  m_AccurateGbufferNormals: 0
+--- !u!114 &410796221942551865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c2c2c3c19808149a4d3454e1019255, type: 3}
+  m_Name: HBAO
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: bf610497676b34e4dbe0f14fe3fe311c, type: 3}
+--- !u!114 &556065169999354128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e06b7c075b7d74d83bcd26a0c10355, type: 3}
+  m_Name: NewSeparableSubsurfaceScatterPassRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  sssssShader: {fileID: 4800000, guid: 6daeaedb67e979849b6d9915a420f9c3, type: 3}
+  sssssPS: {fileID: 4800000, guid: 81489e72f0f0d1f438e0101f0cb9be8d, type: 3}
+--- !u!114 &2318578099684924133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75566c421e0f0044aa1771cc01d2a06, type: 3}
+  m_Name: NewLightShaftsFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    resolution: 1
+    screenBlendMode: 1
+    radialBlurIterations: 2
+    sunColor:
+      r: 1
+      g: 0.07075471
+      b: 0.07075471
+      a: 1
+    sunThreshold:
+      r: 1
+      g: 0.97065616
+      b: 0.7688679
+      a: 1
+    sunShaftBlurRadius: 0.9
+    sunShaftIntensity: 0.54
+    maxRadius: 2.2
+    useDepthTexture: 1
+    renderPassEvent: 600
+--- !u!114 &2990105232895546586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d10079b5838aa848a29ab6c81052afa, type: 3}
+  m_Name: NewMultiRenderPassFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
