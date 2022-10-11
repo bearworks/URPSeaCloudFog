@@ -35,7 +35,7 @@ public class AtmosphericFog : MonoBehaviour
     public Color mAmbColor;
 
     [HeaderAttribute("Scattering Weights")]
-    public Vector4 betaRsMs = Vector4.zero;
+    public Vector4 betaRsMs = Vector4.one;
     public float betaMa = 0f;
 
     // Update is called once per frame
