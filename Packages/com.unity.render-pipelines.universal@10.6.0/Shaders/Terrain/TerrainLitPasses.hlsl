@@ -207,7 +207,7 @@ void HeightBasedSplatModify(inout half4 splatControl, in half4 masks[4])
 }
 #endif
 
-void SplatmapFinalColor(inout half4 color, half2 fogCoord, float3 wpos)
+void SplatmapFinalColor(inout half4 color, half fogCoord, float3 wpos)
 {
     color.rgb *= color.a;
 
@@ -396,7 +396,7 @@ half4 SplatmapFragment(Varyings IN) : SV_TARGET
     color.rgb = GlobalIllumination(brdfData, inputData.bakedGI, occlusion, inputData.normalWS, inputData.viewDirectionWS);
     color.a = alpha;
 
-    SplatmapFinalColor(color, inputData.normalizedScreenSpaceUV, IN.positionWS);
+    SplatmapFinalColor(color, inputData.fogCoord, inputData.positionWS);
 
     return BRDFDataToGbuffer(brdfData, inputData, smoothness, color.rgb);
 
@@ -404,7 +404,7 @@ half4 SplatmapFragment(Varyings IN) : SV_TARGET
 
     half4 color = UniversalFragmentPBR(inputData, albedo, metallic, /* specular */ half3(0.0h, 0.0h, 0.0h), smoothness, occlusion, /* emission */ half3(0, 0, 0), alpha);
 
-    SplatmapFinalColor(color, inputData.normalizedScreenSpaceUV, IN.positionWS);
+    SplatmapFinalColor(color, inputData.fogCoord, inputData.positionWS);
 
     return half4(color.rgb, 1.0h);
 #endif
