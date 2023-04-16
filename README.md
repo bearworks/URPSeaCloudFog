@@ -10,6 +10,10 @@ This is an sea&cloud&sky integrated project for height based & atomspheric fog r
 
 <p align="center">Height based & Sky Fog</p>
 
+![](./Image/URPSeaCloudFog3.png)
+
+<p align="center">Now support 2021.3 or newer</p>
+
 ## Useage
 
 To use MixAtmosFog(inout half3 color, float3 worldPos) to object's shader instead of URP's fog builtin-shader code.
