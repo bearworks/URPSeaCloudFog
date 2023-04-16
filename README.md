@@ -15,7 +15,7 @@ This is an sea&cloud&sky integrated project for height based & atomspheric fog r
 <p align="center">Now supports Unity 2021.3 or newer</p>
 
 ## Useage
-1.To use AtmosFogNode Shadersubgraph in the object's Shadergraph as follow:
+1.To use AtmosFogNode shadersubgraph in the object's shadergraph as follow:
 
 ![](./Image/URPSeaCloudFog5.png)
 
@@ -27,7 +27,7 @@ color.rgb = MixFog(color.rgb, fogCoord); -> MixAtmosFog(color.rgb, worldPos); //
 
 ![](./Image/URPSeaCloudFog4.png)
 
-There is a Unlit shadergraph currently that uses AtmosFogNode (as the cube material in above figure) in this repository.
+There is an Unlit shadergraph currently that uses AtmosFogNode (as the cube material in above figure) in this repository.
 
 Reference:  
 http://advances.realtimerendering.com/s2017/DecimaSiggraph2017.pdf  
