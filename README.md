@@ -14,7 +14,11 @@ This is an sea&cloud&sky integrated project for height based & atomspheric fog r
 
 <p align="center">Now supports Unity 2021.3 or newer</p>
 
+![](./Image/URPSeaCloudFog4.png)
+
 ## Useage
+
+![](./Image/URPSeaCloudFog5.png)
 
 To use MixAtmosFog(inout half3 color, float3 worldPos) to object's shader instead of URP's fog builtin-shader code.
 
