@@ -27,7 +27,7 @@ color.rgb = MixFog(color.rgb, fogCoord); -> MixAtmosFog(color.rgb, worldPos); //
 
 ![](./Image/URPSeaCloudFog4.png)
 
-There is an Unlit shadergraph currently that uses AtmosFogNode (as the cube material in above figure) in this repository.
+There is an unlit shadergraph that uses AtmosFogNode (as the cube material in above figure) in this repository currently.
 
 Reference:  
 http://advances.realtimerendering.com/s2017/DecimaSiggraph2017.pdf  
