@@ -132,7 +132,6 @@ namespace UnityEditor.Rendering.Universal.ShaderGraph
                     { UnlitPasses.Unlit },
                     { CorePasses.ShadowCaster },
                     { CorePasses.DepthOnly },
-                    { CorePasses.DepthNormalOnly },
                 },
             };
 
@@ -143,12 +142,10 @@ namespace UnityEditor.Rendering.Universal.ShaderGraph
                     var unlit = UnlitPasses.Unlit;
                     var shadowCaster = CorePasses.ShadowCaster;
                     var depthOnly = CorePasses.DepthOnly;
-                    var depthNormalsOnly = CorePasses.DepthNormalOnly;
 
                     unlit.pragmas = CorePragmas.DOTSForward;
                     shadowCaster.pragmas = CorePragmas.DOTSInstanced;
                     depthOnly.pragmas = CorePragmas.DOTSInstanced;
-                    depthNormalsOnly.pragmas = CorePragmas.DOTSInstanced;
 
                     return new SubShaderDescriptor()
                     {
@@ -160,7 +157,6 @@ namespace UnityEditor.Rendering.Universal.ShaderGraph
                             { unlit },
                             { shadowCaster },
                             { depthOnly },
-                            { depthNormalsOnly },
                         },
                     };
                 }

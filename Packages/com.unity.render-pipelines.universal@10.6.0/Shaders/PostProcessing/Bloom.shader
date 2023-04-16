@@ -30,12 +30,18 @@ Shader "Hidden/Universal Render Pipeline/Bloom"
             half4 outColor = half4(color, 1.0);
         #endif
 
+        #if UNITY_COLORSPACE_GAMMA
+            return half4(sqrt(outColor.xyz), outColor.w); // linear to γ
+        #else
             return outColor;
+        #endif
         }
 
         half3 DecodeHDR(half4 color)
         {
-
+        #if UNITY_COLORSPACE_GAMMA
+            color.xyz *= color.xyz; // γ to linear
+        #endif
 
         #if _USE_RGBM
             return DecodeRGBM(color);
@@ -66,26 +72,16 @@ Shader "Hidden/Universal Render Pipeline/Bloom"
             half4 M = SAMPLE_TEXTURE2D_X(_SourceTex, sampler_LinearClamp, uv + texelSize * float2(1.0, 1.0));
 
             half2 div = (1.0 / 4.0) * half2(0.5, 0.125);
-#if UNITY_COLORSPACE_GAMMA		    
-			half4 o = (D * D + E * E + I * I + J * J) * div.x;
-		    o += (A * A + B * B + G * G + F * F) * div.y;
-		    o += (B * B + C * C + H * H + G * G) * div.y;
-		    o += (F * F + G * G + L * L + K * K) * div.y;
-		    o += (G * G + H * H + M * M + L * L) * div.y;
-#else
+
             half4 o = (D + E + I + J) * div.x;
             o += (A + B + G + F) * div.y;
             o += (B + C + H + G) * div.y;
             o += (F + G + L + K) * div.y;
             o += (G + H + M + L) * div.y;
-#endif
 
             half3 color = o.xyz;
         #else
             half3 color = SAMPLE_TEXTURE2D_X(_SourceTex, sampler_LinearClamp, uv).xyz;
-            #if UNITY_COLORSPACE_GAMMA
-                color.xyz *= color.xyz; // γ to linear
-            #endif
         #endif
 
             // User controlled clamp to limit crazy high broken spec

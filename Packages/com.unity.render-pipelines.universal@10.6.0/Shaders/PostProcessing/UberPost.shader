@@ -154,7 +154,9 @@ Shader "Hidden/Universal Render Pipeline/UberPost"
                 half4 bloom = SAMPLE_TEXTURE2D_X(_Bloom_Texture, sampler_LinearClamp, uvDistorted);
                 #endif
 
-          
+                #if UNITY_COLORSPACE_GAMMA
+                bloom.xyz *= bloom.xyz; // γ to linear
+                #endif
 
                 UNITY_BRANCH
                 if (BloomRGBM > 0)

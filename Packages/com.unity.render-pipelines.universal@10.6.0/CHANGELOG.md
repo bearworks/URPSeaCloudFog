@@ -4,40 +4,6 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [10.8.1] - 2021-12-06
-
-Version Updated
-The version number for this package has increased due to a version update of a related graphics package.
-
-## [10.8.0] - 2021-09-20
-
-### Added
-- Added [DisallowMultipleRendererFeature] attribute for Renderer Features.
-- Added a DepthNormalOnly pass for UniversalUnlit Shadergraph shaders.
-
-### Changed
-- MaterialReimporter.ReimportAllMaterials now batches the asset database changes to improve performance.
-
-### Fixed
-- Fixed ShaderGraph needing updated normals for ShadowCaster in URP.
-- Fixed memory leak with XR combined occlusion meshes. [case 1366173]
-- Fixed an issue with MSAA falling back to the incorrect value when sample count 2 is not supported on some Android GPUs.
-
-## [10.7.0] - 2021-07-02
-
-### Added
-- Added support for controlling Volume Framework Update Frequency in UI on Cameras and URP Asset as well as through scripting.
-- XR: Added Late Latching support to reduce VR latency (Quest).
-
-### Fixed
-- Fixed terrain hole shadowing [case 1349305]
-- Fixed artifacts in Speed Tree 8 billboard LODs due to SpeedTree LOD smoothing/crossfading [case 1348407]
-- Fixed an issue where the scene view would turn black when bloom was enabled. [case 1298790](https://issuetracker.unity3d.com/issues/urp-bloom-and-tonemapping-causes-the-screen-to-go-black-in-scene-mode), [case 1340848](https://issuetracker.unity3d.com/issues/urp-bloom-produces-visual-artifacts-when-color-slash-emission-are-not-clamped)
-- Fixed a case where camera dimension can be zero. [case 1321168](https://issuetracker.unity3d.com/issues/urp-attempting-to-get-camera-relative-temporary-rendertexture-is-thrown-when-tweening-the-viewport-rect-values-of-a-camera)
-- VFX: Fixed soft particles when HDR or Opaque texture isn't enabled
-- VFX: Fixed OpenGL soft particles fallback when depth texture isn't available
-- Fixed UniversalRenderPipelineAsset multi-edit.
-
 ## [10.6.0] - 2021-04-29
 
 ### Fixed
@@ -136,7 +102,6 @@ The version number for this package has increased due to a version update of a r
 - Fixed bloom inconsistencies between Gamma and Linear color-spaces.
 - Fixed an issue with upgrading material set to cutout didn't properly set alpha clipping. [case 1235516](https://issuetracker.unity3d.com/issues/urp-upgrade-material-utility-does-not-set-the-alpha-clipping-when-material-was-using-a-shader-with-rendering-mode-set-to-cutout)
 - Fixed issue where selecting and deselecting Forward Renderer asset would leak memory [case 1290628](https://issuetracker.unity3d.com/issues/urp-scriptablerendererfeatureeditor-memory-leak-while-interacting-with-forward-renderer-in-the-project-window)
-- Fixed an error where multisampled texture being bound to a non-multisampled sampler in XR. 
 
 ## [10.1.0] - 2020-10-12
 ### Added

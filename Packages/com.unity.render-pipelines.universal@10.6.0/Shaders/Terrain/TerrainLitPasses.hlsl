@@ -419,14 +419,18 @@ struct AttributesLean
 {
     float4 position     : POSITION;
     float3 normalOS       : NORMAL;
-    float2 texcoord     : TEXCOORD0;
+#ifdef _ALPHATEST_ON
+	float2 texcoord     : TEXCOORD0;
+#endif
     UNITY_VERTEX_INPUT_INSTANCE_ID
 };
 
 struct VaryingsLean
 {
     float4 clipPos      : SV_POSITION;
+#ifdef _ALPHATEST_ON
     float2 texcoord     : TEXCOORD0;
+#endif
     UNITY_VERTEX_OUTPUT_STEREO
 };
 
@@ -434,7 +438,7 @@ VaryingsLean ShadowPassVertex(AttributesLean v)
 {
     VaryingsLean o = (VaryingsLean)0;
     UNITY_SETUP_INSTANCE_ID(v);
-    TerrainInstancing(v.position, v.normalOS, v.texcoord);
+    TerrainInstancing(v.position, v.normalOS);
 
     float3 positionWS = TransformObjectToWorld(v.position.xyz);
     float3 normalWS = TransformObjectToWorldNormal(v.normalOS);
@@ -449,7 +453,9 @@ VaryingsLean ShadowPassVertex(AttributesLean v)
 
 	o.clipPos = clipPos;
 
-    o.texcoord = v.texcoord;
+#ifdef _ALPHATEST_ON
+	o.texcoord = v.texcoord;
+#endif
 
 	return o;
 }
@@ -471,7 +477,9 @@ VaryingsLean DepthOnlyVertex(AttributesLean v)
     UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     TerrainInstancing(v.position, v.normalOS);
     o.clipPos = TransformObjectToHClip(v.position.xyz);
-    o.texcoord = v.texcoord;
+#ifdef _ALPHATEST_ON
+	o.texcoord = v.texcoord;
+#endif
 	return o;
 }
 

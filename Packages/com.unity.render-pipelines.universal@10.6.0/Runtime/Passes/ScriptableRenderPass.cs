@@ -124,16 +124,6 @@ namespace UnityEngine.Rendering.Universal
             get => m_DepthAttachment;
         }
 
-        internal RenderBufferStoreAction[] colorStoreActions
-        {
-            get => m_ColorStoreActions;
-        }
-
-        internal RenderBufferStoreAction depthStoreAction
-        {
-            get => m_DepthStoreAction;
-        }
-
         /// <summary>
         /// The input requirements for the <c>ScriptableRenderPass</c>, which has been set using <c>ConfigureInput</c>
         /// </summary>
@@ -153,9 +143,6 @@ namespace UnityEngine.Rendering.Universal
             get => m_ClearColor;
         }
 
-        RenderBufferStoreAction[] m_ColorStoreActions = new RenderBufferStoreAction[] { RenderBufferStoreAction.Store };
-        RenderBufferStoreAction m_DepthStoreAction = RenderBufferStoreAction.Store;
-
         /// A ProfilingSampler for the entire pass. Used by higher level objects such as ScriptableRenderer etc.
         protected internal ProfilingSampler profilingSampler { get; set; }
         internal bool overrideCameraTarget { get; set; }
@@ -172,8 +159,6 @@ namespace UnityEngine.Rendering.Universal
             renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
             m_ColorAttachments = new RenderTargetIdentifier[]{BuiltinRenderTextureType.CameraTarget, 0, 0, 0, 0, 0, 0, 0};
             m_DepthAttachment = BuiltinRenderTextureType.CameraTarget;
-            m_ColorStoreActions = new RenderBufferStoreAction[] { RenderBufferStoreAction.Store, 0, 0, 0, 0, 0, 0, 0 };
-            m_DepthStoreAction = RenderBufferStoreAction.Store;
             m_ClearFlag = ClearFlag.None;
             m_ClearColor = Color.black;
             overrideCameraTarget = false;
@@ -190,25 +175,6 @@ namespace UnityEngine.Rendering.Universal
         public void ConfigureInput(ScriptableRenderPassInput passInput)
         {
             m_Input = passInput;
-        }
-
-        internal void ConfigureColorStoreAction(RenderBufferStoreAction storeAction, uint attachmentIndex = 0)
-        {
-            m_ColorStoreActions[attachmentIndex] = storeAction;
-        }
-
-        internal void ConfigureColorStoreActions(RenderBufferStoreAction[] storeActions)
-        {
-            int count = Math.Min(storeActions.Length, m_ColorStoreActions.Length);
-            for (uint i = 0; i < count; ++i)
-            {
-                m_ColorStoreActions[i] = storeActions[i];
-            }
-        }
-
-        internal void ConfigureDepthStoreAction(RenderBufferStoreAction storeAction)
-        {
-            m_DepthStoreAction = storeAction;
         }
 
         /// <summary>
