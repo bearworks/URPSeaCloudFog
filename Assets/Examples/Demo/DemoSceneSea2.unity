@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.221
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1924656516}
-  m_IndirectSpecularColor: {r: 0.04002245, g: 0.053160183, b: 0.08443503, a: 0.221}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.221}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oceanMaterial: {fileID: 2100000, guid: 13fb1cb396a835440ae2df76679b5314, type: 2}
   usedGridSize: 139
-  usedOceanHeight: 108.23
+  usedOceanHeight: 8.23
   minBias: {x: 1.1, y: 1, z: 0.3, w: 15}
 --- !u!4 &4526011252040512087
 Transform:
@@ -901,7 +901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8832513845132369267}
   m_LocalRotation: {x: -0.14340056, y: 0.077126615, z: 0.011210318, w: 0.98659116}
-  m_LocalPosition: {x: 182.82, y: 109.92, z: 164.54}
+  m_LocalPosition: {x: 182.82, y: 9.92, z: 164.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -967,7 +967,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
