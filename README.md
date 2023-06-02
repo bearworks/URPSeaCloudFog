@@ -10,9 +10,13 @@ This is an sea&cloud&sky integrated project for height based & atomspheric fog r
 
 <p align="center">Height based & Sky Fog</p>
 
+![](./Image/URPSeaCloudFog6.png)
+
+<p align="center">Forward+ Lighting</p>
+
 ![](./Image/URPSeaCloudFog3.png)
 
-<p align="center">Now supports Unity 2021.3 or newer</p>
+<p align="center">Now supports Unity 2022.3</p>
 
 ## Useage
 1.To use AtmosFogNode shadersubgraph in the object's shadergraph as follow:
