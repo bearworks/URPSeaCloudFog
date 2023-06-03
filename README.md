@@ -1,6 +1,6 @@
 # URPSeaCloudFog
 
-This is an sea&cloud&sky integrated project for height based & atomspheric fog rendering for URP (Unity 2020.3+ and Custom URP 10.6).
+This is an sea&cloud&sky integrated project for height based & atomspheric fog rendering for URP (Unity 2022.3+ and Custom URP 14.7).
 
 ![](./Image/URPSeaCloudFog.png)
 <p align="center">Atomspheric Fog (Height based)</p>
