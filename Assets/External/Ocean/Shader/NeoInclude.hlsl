@@ -276,10 +276,12 @@ float3 SSRRayMarch(float3 worldPos, float3 reflection)
 
 	SSRRayConvert(worldPos, startClipPos, startScreenPos);
 
-	float4 farClipPos;
-	float3 farScreenPos;
+	float4 farClipPos = 0;
+	float3 farScreenPos = 0;
 
 	SSRRayConvert(worldPos + reflection * 100000, farClipPos, farScreenPos);
+
+	float3 uvz = 0;
 
 	if ((farScreenPos.x > 0) && (farScreenPos.x < 1) && (farScreenPos.y > 0) && (farScreenPos.y < 1))
 	{
@@ -290,11 +292,11 @@ float3 SSRRayMarch(float3 worldPos, float3 reflection)
 			half2 screenUV = farScreenPos.xy * 2 - 1;
 			screenUV *= screenUV;
 
-			return float3(farScreenPos.xy, saturate(1 - dot(screenUV, screenUV)));
+			uvz = float3(farScreenPos.xy, saturate(1 - dot(screenUV, screenUV)));
 		}
 	}
 
-	return float3(0, 0, 0);
+	return uvz;
 }
 
 

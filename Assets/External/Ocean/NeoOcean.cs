@@ -377,17 +377,19 @@ namespace NOcean
         {
             if (debug)
             {
+                float size = m_map0 != null ? m_map0.width : 256f;
+
                 if (m_map0 != null)
-                    GUI.DrawTexture(new Rect(0, 0, m_map0.width , m_map0.height), m_map0, ScaleMode.ScaleToFit, false);
+                    GUI.DrawTexture(new Rect(0, 0, size, size), m_map0, ScaleMode.ScaleToFit, false);
 
                 if (m_map1 != null)
-                    GUI.DrawTexture(new Rect(0, m_map1.width, m_map1.width , m_map1.height), m_map1, ScaleMode.ScaleToFit, false);
+                    GUI.DrawTexture(new Rect(size, 0, size, size), m_map1, ScaleMode.ScaleToFit, false);
 
-                if (readOut != null)
-                    GUI.DrawTexture(new Rect(0, readOut.width * 2, readOut.width, readOut.height), readOut, ScaleMode.ScaleToFit, false);
+                if (CausticPass.CausticRT_Temp != null)
+                    GUI.DrawTexture(new Rect(0, size, size, size), CausticPass.CausticRT_Temp.rt, ScaleMode.ScaleToFit, false);
 
-                if (readOutNormal != null)
-                    GUI.DrawTexture(new Rect(0, readOutNormal.width * 3, readOutNormal.width, readOutNormal.height), readOutNormal, ScaleMode.ScaleToFit, false);
+                if (CausticPass.CausticRT != null)
+                    GUI.DrawTexture(new Rect(size, size, size, size), CausticPass.CausticRT.rt, ScaleMode.ScaleToFit, false);
 
             }
         }

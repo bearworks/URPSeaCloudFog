@@ -14,6 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   sunShaftsPS: {fileID: 4800000, guid: 6061735351087c24ea4ab13ba7f0a86a, type: 3}
+--- !u!114 &-3589616554977717962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63239fdff9bcf7545bae0204cba6eb96, type: 3}
+  m_Name: WaterCausticsEffect
+  m_EditorClassIdentifier: 
+  m_Active: 1
 --- !u!114 &-1342104630219831097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,8 +56,9 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
       type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: 1184012591562432281}
+  m_RendererFeatureMap: 191fabc92d756e10
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -65,6 +79,14 @@ MonoBehaviour:
     cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf,
       type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
+      type: 3}
+    dataDrivenLensFlare: {fileID: 4800000, guid: 6cda457ac28612740adb23da5d39ea92,
+      type: 3}
+    terrainDetailLitPS: {fileID: 4800000, guid: f6783ab646d374f94b199774402a5144,
+      type: 3}
+    terrainDetailGrassPS: {fileID: 4800000, guid: e507fdfead5ca47e8b9a768b51c291a1,
+      type: 3}
+    terrainDetailGrassBillboardPS: {fileID: 4800000, guid: 29868e73b638e48ca99a19ea58c48d90,
       type: 3}
   m_AssetVersion: 2
   m_OpaqueLayerMask:
@@ -115,6 +137,27 @@ MonoBehaviour:
   m_Active: 1
   sssssShader: {fileID: 4800000, guid: 6daeaedb67e979849b6d9915a420f9c3, type: 3}
   sssssPS: {fileID: 4800000, guid: 81489e72f0f0d1f438e0101f0cb9be8d, type: 3}
+--- !u!114 &1184012591562432281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656f73998a1edc8438cf3425638cf043, type: 3}
+  m_Name: CausticFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  causticDisplaceScale: 0.55
+  causticIOR: {x: 2.5, y: 2, z: 1.5}
+  projectToSeaFloor: 1
+  causticColor: {r: 1, g: 1, b: 1, a: 1}
+  causticIntensity: 4
+  causticMaxDepth: 13.2
+  causticSurfaceOffset: 1.5
+  causticTiling: 1.5
 --- !u!114 &2318578099684924133
 MonoBehaviour:
   m_ObjectHideFlags: 0
